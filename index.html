@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Selma Auala">
+<meta property="og:description" content="HCI researcher at NUST, Windhoek. Co-designing VR, AR and robots with indigenous communities and children in Namibia.">
+<meta property="og:image" content="portrait.jpg">
+<title>Selma Auala</title>
+<meta name="description" content="Selma Auala — HCI researcher at NUST, Windhoek. Co-designing VR, AR and robots with indigenous communities and children in Namibia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: Night Sky structure (star-field hero, round portrait, italic serif section heads on a left rail) in the Editorial palette: white page, near-black ink, deep green accent. Single light look by choice. */
+:root{
+  --bg:#FFFFFF;
+  --fg:#141414;
+  --muted:#5E625F;
+  --rule:#E3E5E2;
+  --accent:#1F5C46;
+  --accent-soft:#E4EFE9;
+  --star:31,92,70;
+  --display:"Instrument Serif", Georgia, "Times New Roman", serif;
+  --body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:1.06rem;line-height:1.65;
+  padding-left:max(16px, env(safe-area-inset-left,0px));padding-right:max(16px, env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.08}
+.wrap{max-width:1040px;margin:0 auto}
+
+/* nav */
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule)}
+header.nav .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;padding-block:16px}
+.brand{font-family:var(--mono);font-weight:500;font-size:.82rem;letter-spacing:.1em;color:var(--accent);text-decoration:none}
+nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:4px 18px;margin:0;padding:0}
+nav a{display:inline-block;padding-block:6px;font-size:.9rem;color:var(--muted);text-decoration:none;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+nav a:hover,nav a[aria-current="true"]{color:var(--accent);border-bottom-color:var(--accent)}
+a{transition:color .2s}
+.skip{position:absolute;left:-9999px;top:8px;z-index:20;background:var(--accent);color:#fff;padding:10px 14px;border-radius:4px}
+.skip:focus{left:max(16px, env(safe-area-inset-left,0px))}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 20px;border-radius:999px;font-size:.95rem;font-weight:500;text-decoration:none;border:1px solid var(--accent);transition:background-color .2s,color .2s}
+.btn.solid{background:var(--accent);color:#fff}
+.btn.solid:hover{background:#174634}
+.btn.ghost{color:var(--accent);background:var(--bg)}
+.btn.ghost:hover{background:var(--accent-soft)}
+.btn svg{width:16px;height:16px}
+.copy{margin-left:10px;min-height:32px;padding:0 12px;border:1px solid var(--rule);border-radius:999px;background:var(--bg);color:var(--accent);font:500 .8rem var(--mono);cursor:pointer;transition:border-color .2s}
+.copy:hover{border-color:var(--accent)}
+.copy:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero with star field */
+.hero{position:relative;display:grid;grid-template-columns:1fr 250px;gap:48px;align-items:center;padding-block:80px 72px;border-bottom:1px solid var(--rule)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.hero > div,.hero > figure{position:relative;z-index:1;min-width:0}
+.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 20px}
+.hero h1{font-size:clamp(3.6rem,10vw,7.4rem);line-height:.92;letter-spacing:-.01em}
+.hero h1 i{color:var(--accent)}
+.roles{font-size:1.15rem;line-height:1.6;color:#3A3D3B;margin:24px 0 0;max-width:46ch}
+.facts{display:flex;flex-wrap:wrap;gap:10px 44px;margin:36px 0 0;padding:0;list-style:none;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.facts b{font-family:var(--display);font-weight:400;font-size:2.8rem;letter-spacing:0;color:var(--accent);display:block;line-height:1;font-variant-numeric:tabular-nums}
+.portrait{margin:0;width:250px;max-width:100%;aspect-ratio:1;border-radius:50%;overflow:hidden;
+  box-shadow:0 0 0 1px var(--accent),0 0 0 12px var(--bg),0 0 0 13px rgba(31,92,70,.35)}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 26%}
+
+/* sections */
+section{display:grid;grid-template-columns:200px 1fr;gap:12px 40px;padding-block:60px;border-bottom:1px solid var(--rule);scroll-margin-top:72px}
+section > *{min-width:0}
+.label{font-family:var(--display);font-style:italic;font-size:1.9rem;line-height:1.1;color:var(--accent)}
+section h2{font-size:clamp(1.9rem,4vw,2.6rem);margin-bottom:24px}
+h3.sub{font-family:var(--mono);font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:44px 0 14px}
+.prose p{max-width:64ch;margin:0 0 1em}
+.prose p:last-child{margin-bottom:0}
+.lede{font-family:var(--display);font-size:1.6rem;line-height:1.35}
+
+/* research */
+.projects{list-style:none;margin:0;padding:0}
+.projects li{display:grid;grid-template-columns:1fr auto;gap:6px 24px;padding-block:22px;border-top:1px solid var(--rule)}
+.projects li:first-child{border-top:0;padding-top:0}
+.projects h3{font-size:1.7rem}
+.projects p{grid-column:1/-1;margin:0;max-width:64ch}
+.projects .role{color:var(--muted);font-size:.98rem}
+.meta{grid-column:1/-1;font-family:var(--mono);font-size:.78rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 14px}
+.years{font-family:var(--mono);font-size:.78rem;color:var(--accent);white-space:nowrap;padding-top:8px;font-variant-numeric:tabular-nums}
+.more{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 36px}
+.more h4{font-family:var(--display);font-weight:400;font-size:1.3rem;margin:0 0 4px}
+.more p{margin:0;font-size:.95rem;color:var(--muted)}
+
+/* awards, news, timelines */
+.awards,.news,.tl{list-style:none;margin:0;padding:0}
+.awards li,.news li{display:grid;grid-template-columns:100px 1fr;gap:16px;padding-block:11px;border-top:1px solid var(--rule)}
+.awards li:first-child,.news li:first-child,.tl li:first-child{border-top:0;padding-top:0}
+.awards time,.news time,.tl time{font-family:var(--mono);font-size:.78rem;color:var(--accent);font-variant-numeric:tabular-nums;padding-top:4px}
+.awards span small{display:block;color:var(--muted);font-size:.92rem}
+.tl li{display:grid;grid-template-columns:150px 1fr;gap:16px;padding-block:14px;border-top:1px solid var(--rule)}
+.tl li > span{min-width:0}
+.tl b{font-family:var(--display);font-weight:400;font-size:1.35rem;display:block;line-height:1.2}
+.tl small{display:block;color:var(--muted);font-size:.95rem}
+
+/* publications */
+.pubs-year{display:grid;grid-template-columns:70px 1fr;gap:16px;padding-block:20px;border-top:1px solid var(--rule)}
+.pubs-year:first-of-type{border-top:0;padding-top:0}
+.pubs-year > div{min-width:0}
+.pubs-year .yr{font-family:var(--display);font-size:1.8rem;color:var(--accent);line-height:1;font-variant-numeric:tabular-nums}
+.pubs-year ol{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.pubs-year li{font-size:.98rem;line-height:1.5}
+.pubs-year .t{display:block;font-family:var(--display);font-size:1.22rem;line-height:1.25}
+.pubs-year .a{display:block;color:var(--muted);margin-top:2px}
+.pubs-year .a b{color:var(--fg);font-weight:600}
+.pubs-year .v{display:block;font-style:italic;color:var(--muted)}
+details.older summary{cursor:pointer;font-family:var(--mono);font-size:.8rem;color:var(--accent);padding-block:16px;border-top:1px solid var(--rule)}
+
+/* teaching */
+.courses{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.course .code{font-family:var(--mono);font-size:.78rem;color:var(--accent)}
+.course h3{font-size:1.5rem;margin:4px 0 8px}
+.course p{margin:0;color:var(--muted);font-size:.98rem}
+.plain{margin:0;padding-left:1.1em;max-width:64ch}
+.plain li{margin-bottom:6px}
+.plain li::marker{color:var(--accent)}
+.plain small{color:var(--muted)}
+.todo{background:var(--accent-soft);color:var(--fg);font-family:var(--mono);font-size:.82em;padding:1px 6px;border-radius:2px}
+
+/* contact */
+.contact dl{display:grid;grid-template-columns:110px 1fr;gap:10px 16px;margin:0}
+.contact dt{font-family:var(--mono);font-size:.78rem;color:var(--muted);padding-top:4px}
+.contact dd{margin:0;overflow-wrap:anywhere}
+footer{padding-block:32px 48px;font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;gap:32px;padding-block:44px 40px}
+  .portrait{width:180px;order:-1}
+  section{grid-template-columns:1fr;padding-block:44px}
+  .courses,.more{grid-template-columns:1fr}
+  .news li,.awards li,.tl li,.contact dl,.pubs-year{grid-template-columns:1fr;gap:2px}
+  .contact dt{padding-top:10px}
+  .pubs-year .yr{margin-bottom:8px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#about">Skip to content</a>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Selma Auala</a>
+    <nav aria-label="Sections"><ul>
+      <li><a href="#about">about</a></li>
+      <li><a href="#research">work</a></li>
+      <li><a href="#publications">writing</a></li>
+      <li><a href="#cv">path</a></li>
+      <li><a href="#teaching">teaching</a></li>
+      <li><a href="#news">lately</a></li>
+      <li><a href="#contact">say hello</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <div class="hero">
+    <canvas id="stars" aria-hidden="true"></canvas>
+    <div>
+      <p class="eyebrow">Windhoek, Namibia · NUST · ICTechHub</p>
+      <h1>Selma <i>Auala</i></h1>
+      <p class="roles">Human–computer interaction researcher. I co-design virtual reality, augmented reality and robots with indigenous communities and children in Namibia.</p>
+      <ul class="facts">
+        <li><b>26</b>publications</li>
+        <li><b>7</b>awards &amp; scholarships</li>
+        <li><b>6</b>partner countries</li>
+      </ul>
+      <div class="cta"><a class="btn solid" href="#publications">Read my papers <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a><a class="btn ghost" href="#contact">Get in touch</a></div>
+    </div>
+    <figure class="portrait">
+      <img src="portrait.jpg" alt="Selma Auala smiling, wearing a white shirt with a navy collar" width="378" height="529">
+    </figure>
+  </div>
+
+  <section id="about">
+    <div class="label">About</div>
+    <div class="prose">
+      <h2>Designing with communities, not for them</h2>
+      <p class="lede">My work sits where human–computer interaction, participatory design and indigenous knowledge meet.</p>
+      <p>I am the Technology Innovation and Community Coordinator at the Inclusive and Collaborative Local Tech Innovation Hub (ICTechHub) at the Namibia University of Science and Technology (NUST), and a part-time lecturer in the Department of Software Engineering. I also coordinate the AI Language Sprint, which collects language data for Namibian languages with community translators.</p>
+      <p>Most of my research happens in the field. With OvaHimba and Ju|’hoansi San communities, and with primary school learners in Katutura, I run co-design workshops where the people who will use a technology shape it from the first sketch. Out of this have come VR experiences such as HimbaVerse and Sanscape, an extended reality escape room, and robots designed by Namibian children.</p>
+      <p>I hold a BSc and a BSc Honours in Computer Science (Software Development) from NUST, spent a semester at Aalborg University in Denmark, and am completing a Master of Computer Science at NUST. In 2026 I was selected as a Young Researcher for the Heidelberg Laureate Forum.</p>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="label">Work</div>
+    <div>
+      <h2>What I’m building</h2>
+      <ul class="projects">
+        <li>
+          <h3>Co-creating socio-cultural VR learning experiences for primary school learners</h3>
+          <span class="years">2024–</span>
+          <p>VR learning experiences designed with learners, educators and communities, aiming to bring indigenous knowledge into Namibia’s primary school curriculum. This is my MCS research.</p>
+          <p class="role">Main researcher: facilitated workshops, designed and built parts of the VR system, authored the publications.</p>
+          <div class="meta"><span>Supervisors: Prof. Heike Winschiers-Theophilus, Dr. Naska Goagoses</span></div>
+        </li>
+        <li>
+          <h3>HimbaVerse</h3>
+          <span class="years">2024–</span>
+          <p>VR experiences made with the OvaHimba community to represent their culture faithfully and keep their indigenous knowledge alive.</p>
+          <p class="role">Facilitated co-design workshops, built parts of the system and managed the design-to-development handover.</p>
+        </li>
+        <li>
+          <h3>Sanscape</h3>
+          <span class="years">2022–</span>
+          <p>VR experiences made with Ju|’hoansi San community members, showing their traditions and customs as they want them shown.</p>
+          <p class="role">Coordinated fieldwork, facilitated workshops and built parts of the system.</p>
+        </li>
+        <li>
+          <h3>AI Language Sprint · NamTalkies</h3>
+          <span class="years">2026–</span>
+          <p>A web platform where community translators and validators build language data for Namibian languages, starting with field workshops in Tsumkwe.</p>
+          <p class="role">Project coordinator: field trips, budget, funder reporting and supervision of interns.</p>
+          <div class="meta"><span>Funded by UNDP Namibia</span></div>
+        </li>
+      </ul>
+
+      <h3 class="sub">Also involved in</h3>
+      <ul class="more">
+        <li><h4>Enacting Future Robots</h4><p>Children in Namibia and Denmark co-design a robot for sustainable shopping. With Aalborg University.</p></li>
+        <li><h4>Robots and intercultural interaction with Haru</h4><p>Children in Namibia, Denmark, Japan and the USA test robots for intercultural understanding.</p></li>
+        <li><h4>Extended reality escape room</h4><p>VR, AR and sensor stations built around a Candyland designed by People’s Primary School learners.</p></li>
+        <li><h4>People’s Primary School Interactive Library</h4><p>Children from Katutura co-creating EdTech in their own interactive tech library.</p></li>
+        <li><h4>Beyond the Imaginable</h4><p>Holographic and VR telepresence for remote learning. Led by the University of Turku.</p></li>
+        <li><h4>National Action Plan for Indigenous Languages</h4><p>UNESCO-initiated plan for Namibia. I ran validation workshops and wrote the final draft.</p></li>
+        <li><h4>SESA: Smart Energy Solutions for Africa</h4><p>EU project with nine African countries. Community coordinator for Namibia.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="awards">
+    <div class="label">Recognition</div>
+    <div>
+      <h2>Awards and honours</h2>
+      <ul class="awards">
+        <li><time datetime="2026-09">Sep 2026</time><span>Young Researcher<small>Heidelberg Laureate Forum</small></span></li>
+        <li><time datetime="2026-04">Apr 2026</time><span>SIGCHI Fund for AfriCHI Mentees<small>ACM SIGCHI</small></span></li>
+        <li><time datetime="2025-11">Nov 2025</time><span>Best Notes Paper Award<small>5th African Human Computer Interaction Conference (AfriCHI)</small></span></li>
+        <li><time datetime="2025-06">Jun 2025</time><span>Best Work in Progress Paper Award<small>ACM International Conference on Interactive Media Experiences (IMX)</small></span></li>
+        <li><time datetime="2025-06">Jun 2025</time><span>Gary Marsden Travel Award<small>ACM SIGCHI</small></span></li>
+        <li><time datetime="2024-11">Nov 2024</time><span>ACM Women’s Scholarship<small>ACM-W</small></span></li>
+        <li><time datetime="2024-11">Nov 2024</time><span>Best Full Paper Award and Best Demo Paper Award<small>4th African Human Computer Interaction Conference (AfriCHI)</small></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="label">Writing</div>
+    <div>
+      <h2>Papers and chapters</h2>
+
+      <div class="pubs-year"><div class="yr">2027</div><div><ol>
+        <li><span class="t">Grounding Meaningful Virtual Reality Learning Experiences in Ju/’hoansi Teaching and Learning Practices</span><span class="a"><b>Auala, S.</b>, Kandjibi, S., Winschiers-Theophilus, H., &amp; Goagoses, N.</span><span class="v">Reorienting the Digital: Ethics, Ontology, and Sustainable Futures, Springer Nature, pp. 479–490</span></li>
+      </ol></div></div>
+
+      <div class="pubs-year"><div class="yr">2026</div><div><ol>
+        <li><span class="t">Promoting Ocean Stewardship by Embedding an Ocean Literacy VR Experience in a Traditional Topnaar Narrative</span><span class="a">Dyakugha, R., Animas, T., Rodil, K., <b>Auala, S.</b>, &amp; Winschiers-Theophilus, H.</span><span class="v">ACM IMX 2026, pp. 610–614</span></li>
+        <li><span class="t">Culturally Informed Colour Coding in Virtual Reality: Preserving ovaHimba Heritage</span><span class="a">Kaunatjike, T., Arendttorp, E. M. N., <b>Auala, S.</b>, &amp; Winschiers-Theophilus, H.</span><span class="v">ACM IMX 2026, Athlone, Ireland, pp. 537–542</span></li>
+        <li><span class="t">Closing the Distance: Transferability and Co-design of a Starlore VR Prototype with Ju/’hoansi San Elders in Namibia</span><span class="a">Rodil, K., N!aici, !Amace, Christiansen, F. R., Hollensberg, L. N., Julsgaard, K., <b>Auala, S.</b>, Maasz, D., Auala, S. L., &amp; Winschiers-Theophilus, H.</span><span class="v">ACM IMX 2026, Athlone, Ireland, pp. 424–429</span></li>
+        <li><span class="t">Parrobot: A Low-Cost Platform for Human–Robot Interaction Research and Education</span><span class="a">Isuf, V., Rosenlund, E., <b>Auala, S.</b>, Nepolo, E., Winschiers-Theophilus, H., Krummheuer, A. L., &amp; Rehm, M.</span><span class="v">35th IEEE International Conference on Robot and Human Interactive Communication (RO-MAN)</span></li>
+        <li><span class="t">Integration of Games and Models as an Approach to Support Inclusive Environmental Conservation</span><span class="a">Samuel, M., Duthie, B., Corcoran, C., <b>Auala, S.</b>, &amp; Bunnefeld, N.</span><span class="v">21st International Conference on the Foundations of Digital Games, pp. 1–5</span></li>
+        <li><span class="t">Not Becoming Friends: Situated Categorization Processes in Child-Robot Interaction</span><span class="a">Krummheuer, A. L., Rehm, M., Yi, Z., et al., <b>Auala, S.</b>, Winschiers-Theophilus, H., et al.</span><span class="v">Robophilosophy 2026 (in press)</span></li>
+      </ol></div></div>
+
+      <div class="pubs-year"><div class="yr">2025</div><div><ol>
+        <li><span class="t">Creating a Responsible AI Framework for Cultural Validity: Exploring Heritage Futures with an Ovahimba Indigenous Community of Namibia</span><span class="a"><b>Auala, S.</b>, Mbinge, U., Ndjao, L., Van Niekerk, K., Nathingo, N., Nehoya, R., Smith, R., Rodil, K., Kapuire, G., Maasz, D., et al.</span><span class="v">5th African Human Computer Interaction Conference (AfriCHI), pp. 358–368</span></li>
+        <li><span class="t">Co-Designing Learning Supports for Cultural Virtual Reality Experiences with Namibian Primary School Learners</span><span class="a"><b>Auala, S.</b>, Winschiers-Theophilus, H., &amp; Goagoses, N.</span><span class="v">24th Interaction Design and Children Conference (IDC), pp. 961–966</span></li>
+        <li><span class="t">Learn to Hunt like a San: A Virtual Reality Experience Blending Traditional Practices with Formal Education</span><span class="a"><b>Auala, S.</b>, &amp; Winschiers-Theophilus, H.</span><span class="v">ACM IMX 2025, pp. 350–352</span></li>
+        <li><span class="t">Building Friendships Across Borders: The Role of Social Robot Haru in Children Group Communication and Connection Development</span><span class="a">Yi, Z., Levinson, L., Delgado-Chaves, D., et al., <b>Auala, S.</b>, et al.</span><span class="v">34th IEEE RO-MAN, pp. 65–72</span></li>
+        <li><span class="t">“It’s Technology that Gets us Together”: Exploring Teachers’ Perspectives on Holographic Telepresence for Synchronous Hybrid Learning in Schools</span><span class="a">Montero, C. S., Han, X., <b>Auala, S.</b>, Hahta, S., Suovuo, T., Rötkönen, E., Winschiers-Theophilus, H., &amp; Sutinen, E.</span><span class="v">IEEE ICALT 2025, pp. 271–275</span></li>
+        <li><span class="t">Co-creating a VR Narrative Experience of Constructing a Food Storage Following OvaHimba Traditional Practices</span><span class="a">Peter, K., Makosa, I., <b>Auala, S.</b>, Ndjao, L., Maasz, D., Mbinge, U., &amp; Winschiers-Theophilus, H.</span><span class="v">ACM IMX 2025, pp. 418–423</span></li>
+        <li><span class="t">Teachers and Students Envisioning Mixed Reality Remote Learning: A Qualitative Exploration on Fostering Academic Engagement</span><span class="a">Goagoses, N., Winschiers-Theophilus, H., <b>Auala, S.</b>, Pope, N., Rötkönen, E., Itenge, H., Suero Montero, C., Suovuo, T., &amp; Sutinen, E.</span><span class="v">Technology, Knowledge and Learning, 30(2), 685–709</span></li>
+      </ol></div></div>
+
+      <details class="older">
+        <summary>Show 2023–2024 (12 papers)</summary>
+
+        <div class="pubs-year"><div class="yr">2024</div><div><ol>
+          <li><span class="t">Renegotiating Responsible AI: Contextualising AI Futures with Indigenous Communities in Namibia</span><span class="a">Smith, R. C., Mbinge, U., <b>Auala, S.</b>, Kandjengo, S., Till, S., Wanvig, R., Indongo, N., Kays, R., Kapuire, G. K., &amp; Winschiers-Theophilus, H.</span><span class="v">ACM CHI Conference on Human Factors in Computing Systems</span></li>
+          <li><span class="t">Enacting Future Robots with Namibian Children</span><span class="a">Krummheuer, A., <b>Auala, S.</b>, Itenge, H., &amp; Winschiers-Theophilus, H.</span><span class="v">International Conference on Social Robotics, Springer, pp. 192–201</span></li>
+          <li><span class="t">Co-design of an Extended Reality Escape Room with Primary School Students</span><span class="a">Becker, K., Itenge, H., <b>Auala, S.</b>, Isaacs, J.-D., &amp; Winschiers-Theophilus, H.</span><span class="v">23rd ACM Interaction Design and Children Conference (IDC), pp. 744–748</span></li>
+          <li><span class="t">Primary School Students Designing for Future Relationship Building in Extended Realities: Encounters with Live Human Holograms</span><span class="a">Goagoses, N., Winschiers-Theophilus, H., Mendes, J., <b>Auala, S.</b>, &amp; Sutinen, E.</span><span class="v">Participatory Design Conference 2024, Vol. 2, pp. 13–18</span></li>
+          <li><span class="t">A Dynamically Evolving Multicultural Escape Suitcase Travelling a Participatory Journey</span><span class="a">Becker, K., Winschiers-Theophilus, H., Maasz, D., <b>Auala, S.</b>, Itenge, H., Isaacs, J.-D., Peter, K., &amp; Goagoses, N.</span><span class="v">Participatory Design Conference 2024, Vol. 3, pp. 3–5</span></li>
+          <li><span class="t">Community Podcast and Soundscape Creation on Issues that Matter to Indigenous People Across the Globe</span><span class="a">Becker, K., Kandjengo, S., Kaulbach, P., Maasz, D., <b>Auala, S.</b>, Isaacs, J.-D., &amp; Winschiers-Theophilus, H.</span><span class="v">Participatory Design Conference 2024, Vol. 3, pp. 6–9</span></li>
+        </ol></div></div>
+
+        <div class="pubs-year"><div class="yr">2023</div><div><ol>
+          <li><span class="t">A Community-Based Exploration into Gesture-Driven Locomotion Control in Virtual Reality</span><span class="a">Arendttorp, E., <b>Auala, S.</b>, Winschiers-Theophilus, H., Rodil, K., &amp; Magot, S.</span><span class="v">4th African Human Computer Interaction Conference (AfriCHI), pp. 180–189</span></li>
+          <li><span class="t">Let’s Dance/Hi//Ka//Kusi with Non-Player Character Ju/’hoansi Women in Virtual Reality</span><span class="a">Johansen, F. B. K., Jørgensen, M. R., Kjeldsen, T. K. K., Magot, S., Kandjengo, S., Isaacs, J.-D., <b>Auala, S.</b>, Kays, R., Arendttorp, E. M. N., Winschiers-Theophilus, H., et al.</span><span class="v">4th AfriCHI, pp. 241–245</span></li>
+          <li><span class="t">Bridging Spaces: A Student Perspective on Designing for Remote Presence with 3D Holograms</span><span class="a">Mendes, J., <b>Auala, S.</b>, Winschiers-Theophilus, H., Suovuo, T., Sutinen, E., Suero Montero, C., &amp; Goagoses, N.</span><span class="v">4th AfriCHI, pp. 249–253</span></li>
+          <li><span class="t">Co-designing Technologies with Children</span><span class="a">Itenge, H., Kays, R., <b>Auala, S.</b>, Chivuno-Kuria, S., Peter, K., &amp; Makosa, I.</span><span class="v">4th AfriCHI, pp. 300–303</span></li>
+          <li><span class="t">An AR Game for Primary Learners to Safeguard Intangible Cultural Heritage of the OvaHimba Tribe</span><span class="a">Peter, K., <b>Auala, S.</b>, &amp; Winschiers-Theophilus, H.</span><span class="v">ACM IMX 2023, pp. 359–361</span></li>
+          <li><span class="t">Wearing a HoloLens: A New Dimension to Remote Presence in Education</span><span class="a">Hahta, S., Teimouri, M., Suovuo, T., <b>Auala, S.</b>, Rötkönen, E., Mendes, J., Goagoses, N., Winschiers-Theophilus, H., &amp; Sutinen, E.</span><span class="v">11th International Conference on Communities &amp; Technologies, EUSSET</span></li>
+        </ol></div></div>
+      </details>
+    </div>
+  </section>
+
+  <section id="cv">
+    <div class="label">Path</div>
+    <div>
+      <h2>Where I’ve worked</h2>
+      <ul class="tl">
+        <li><time>Jul 2026 – now</time><span><b>AI Sprint Project Coordinator</b><small>Department of Software Engineering, NUST</small></span></li>
+        <li><time>Feb 2025 – now</time><span><b>Part-Time Lecturer</b><small>Faculty of Computing and Informatics, NUST</small></span></li>
+        <li><time>Jul 2023 – now</time><span><b>Technology Innovation and Community Coordinator</b><small>ICTechHub, NUST. Multi-year projects with indigenous communities; research collaborations with Denmark, Finland, Germany and the USA; co-organiser of the Indigenous Knowledge Fair 2025.</small></span></li>
+        <li><time>Feb 2024 – Sep 2025</time><span><b>SESA Project Coordinator</b><small>Smart Energy Solutions for Africa (EU)</small></span></li>
+        <li><time>Nov 2023 – Nov 2025</time><span><b>Interactive Exhibition Co-Chair</b><small>AfriCHI, two conference cycles</small></span></li>
+        <li><time>Feb – Jun 2023</time><span><b>Research Intern</b><small>Architecture, Design &amp; Media Technology, Aalborg University, Denmark</small></span></li>
+        <li><time>Feb – Dec 2022</time><span><b>EduTech Developer and Facilitator</b><small>ICTechHub, NUST</small></span></li>
+      </ul>
+
+      <h3 class="sub">Education</h3>
+      <ul class="tl">
+        <li><time>2025 – now</time><span><b>Master of Computer Science</b><small>NUST, Windhoek</small></span></li>
+        <li><time>2024</time><span><b>BSc (Hons) Computer Science: Software Development</b><small>NUST, Windhoek</small></span></li>
+        <li><time>Feb – Jul 2023</time><span><b>Exchange semester in Mediology</b><small>Aalborg University, Denmark</small></span></li>
+        <li><time>2019 – 2023</time><span><b>BSc Computer Science: Software Development</b><small>NUST, Windhoek</small></span></li>
+      </ul>
+
+      <h3 class="sub">Service</h3>
+      <ul class="plain">
+        <li>Interactive Exhibition Co-Chair, AfriCHI 2023–2025</li>
+        <li>Co-organiser, Indigenous Knowledge Fair 2025</li>
+        <li>Student volunteer, Participatory Design Conference 2024, Sibu, Malaysia</li>
+        <li>Student volunteer, ACM IMX 2023, Nantes, France</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="teaching">
+    <div class="label">Teaching</div>
+    <div>
+      <h2>Teaching and supervision</h2>
+      <div class="courses">
+        <div class="course">
+          <div class="code">DST511S</div>
+          <h3>Design Thinking</h3>
+          <p>Undergraduate group projects with prototype pitches, peer evaluation and poster presentations.</p>
+        </div>
+        <div class="course">
+          <div class="code">Undergraduate</div>
+          <h3>Database Fundamentals</h3>
+          <p>Lectures and practicals for software engineering students.</p>
+        </div>
+      </div>
+
+      <h3 class="sub">Theses co-supervised · main supervisor Prof. Heike Winschiers-Theophilus</h3>
+      <ul class="plain">
+        <li>From Tradition to Technology: Co-Designing a Digital Game Integrating Ju/’hoansi Hunter-Gatherer Practices <small>· Orilio Khan-Khan Prince Naobeb</small></li>
+        <li>Enhancing VR experiences through motion capture integration for realistic NPC animation and interaction <small>· Jose Kaboy Clayton, 2026–</small></li>
+        <li>Enhancing first-time VR experiences for cultural learning and education systems <small>· Robert Hihangwapo, 2025–</small></li>
+        <li>Assessing observational learning from non-player characters in cultural VR environments <small>· Shali Kandjimbi, 2025</small></li>
+        <li>Development of student-defined gestures for NPC interactions in cultural learning VR <small>· Peter Van Wyk, 2025</small></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="news">
+    <div class="label">Lately</div>
+    <div>
+      <h2>What’s new</h2>
+      <ul class="news">
+        <li><time datetime="2026-09">Sep 2026</time><span>Selected as a Young Researcher for the Heidelberg Laureate Forum.</span></li>
+        <li><time datetime="2026-08">Aug 2026</time><span>Ran a three-day AI Language Sprint workshop in Tsumkwe with 18 community translators and validators.</span></li>
+        <li><time datetime="2026">2026</time><span>Three co-authored papers at ACM IMX 2026 in Athlone, Ireland.</span></li>
+        <li><time datetime="2025-11">Nov 2025</time><span>Best Notes Paper Award at AfriCHI 2025.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="label">Say hello</div>
+    <div>
+      <h2>Get in touch</h2>
+      <dl>
+        <dt>Email</dt><dd><span id="email">selmaauala15@gmail.com</span><button class="copy" id="copy-email" type="button">Copy</button></dd>
+        <dt>ORCID</dt><dd><a href="https://orcid.org/0009-0007-8843-5445">0009-0007-8843-5445</a></dd>
+        <dt>Office</dt><dd>ICTechHub, Namibia University of Science and Technology, Windhoek</dd>
+        <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/selma-auala">linkedin.com/in/selma-auala</a></dd>
+        <dt>Scholar</dt><dd><a href="https://scholar.google.com/citations?user=4PZBzs0AAAAJ&amp;hl=en">Google Scholar profile</a></dd>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">© 2026 Selma Auala · Windhoek, Namibia</footer>
+<script>
+(function(){
+  const c=document.getElementById("stars");
+  if(c){
+    const still=matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let pts=[],w=0,h=0,raf,start=null,visible=true;
+    const RUN=8000;
+    function size(){
+      const r=c.getBoundingClientRect(),dpr=Math.min(2,devicePixelRatio||1);
+      w=r.width;h=r.height;c.width=w*dpr;c.height=h*dpr;
+      c.getContext("2d").setTransform(dpr,0,0,dpr,0,0);
+      let seed=11;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+      pts=Array.from({length:Math.round(w*h/5200)},()=>({x:rnd()*w,y:rnd()*h,s:rnd()*1.3+.3,p:rnd()*6.28}));
+    }
+    function paint(t,settle){
+      const x=c.getContext("2d");x.clearRect(0,0,w,h);
+      for(const p of pts){
+        const tw=.12+.3*Math.abs(Math.sin(p.p+t/1700));
+        const a=settle>=1?.26:tw*(1-settle)+.26*settle;
+        x.fillStyle="rgba(31,92,70,"+a.toFixed(3)+")";x.beginPath();x.arc(p.x,p.y,p.s,0,6.283);x.fill();
+      }
+    }
+    function frame(t){
+      if(start===null) start=t;
+      const k=Math.min(1,Math.max(0,(t-start-RUN+1500)/1500));
+      paint(t,k);
+      if(k<1&&visible&&!document.hidden) raf=requestAnimationFrame(frame);
+    }
+    size();
+    if(still) paint(0,1); else raf=requestAnimationFrame(frame);
+    new IntersectionObserver(e=>{visible=e[0].isIntersecting;}).observe(c);
+    addEventListener("resize",()=>{cancelAnimationFrame(raf);size();paint(0,1);});
+  }
+  // highlight current section in nav
+  const links=[...document.querySelectorAll('nav a[href^="#"]')];
+  const map=new Map(links.map(a=>[a.getAttribute("href").slice(1),a]));
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.setAttribute("aria-current","false"));const a=map.get(e.target.id);if(a)a.setAttribute("aria-current","true");}});},{rootMargin:"-40% 0px -55% 0px"});
+  document.querySelectorAll("section[id]").forEach(s=>io.observe(s));
+  // copy email
+  const b=document.getElementById("copy-email");
+  if(b) b.addEventListener("click",()=>{
+    const t=document.getElementById("email").textContent;
+    const done=()=>{b.textContent="Copied";setTimeout(()=>b.textContent="Copy",1800);};
+    const sel=()=>{const r=document.createRange();r.selectNodeContents(document.getElementById("email"));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Selected";setTimeout(()=>b.textContent="Copy",1800);};
+    try{navigator.clipboard.writeText(t).then(done,sel);}catch(e){sel();}
+  });
+})();
+</script>
+</body>
+</html>
