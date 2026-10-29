@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://selma-auala.github.io/sitemap.xml
